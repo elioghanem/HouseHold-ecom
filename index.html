@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer"
     />
+    <script defer src="index.js"></script>
 </head>
 
 <body>
@@ -19,28 +20,41 @@
                     <img src="./assets household/logo.jpeg" alt="" class="img__logo">
                     <ul class="nav__link--list">
                         <li class="nav__link">
-                            <a href="" class="nav__link--anchor">Home</a>
+                            <a href="#" class="nav__link--anchor">Home</a>
                         </li>
                         <li class="nav__link">
-                            <a href="" class="nav__link--anchor">Shop</a>
+                            <a href="#shop" class="nav__link--anchor">Shop</a>
                         </li>
                         <li class="nav__link">
-                            <a href="" class="nav__link--anchor">About-me</a>
+                            <a href="#AboutUs" class="nav__link--anchor">About-Us</a>
                         </li>
                         <li class="nav__link">
-                            <a href="" class="nav__link--anchor">Log in</a>
+                            <a href="#login" class="nav__link--anchor">Login</a>
                         </li>
-                        <li class="nav__link">
-                            <a href="" class="nav__link--anchor
-                        style__bag"><i class="fa-solid fa-bag-shopping"></i></a>
-                        </li>
+
                     </ul>
+
+                    <div class="shopping">
+                        <i class="style__bag fa-sharp fa-solid fa-bag-shopping"></i>
+                        <span class="quantity">0</span>
+                    </div>
+
+                    <div class="card">
+                        <div class="card__span--wrapper">
+                            <h1>card</h1>
+                            <span><i class=" title__card fa-solid fa-cart-shopping"></i></span>
+                        </div>
+                        <ul class="listCard"></ul>
+                        <div class="checkout">
+                            <div class="total">0</div>
+                            <div class="close__shopping">Close</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </nav>
         <header>
             <div class="home__intro">
-                <img src="./assets household/spectrum-gradient.svg" alt="" class="background__img">
                 <img src="./assets household/logo.jpeg" alt="" class="header__logo">
                 <div class="welcome__box">
                     <h1 class="welcome__title">WELCOME TO HOMECOMFORTES</h1>
@@ -48,11 +62,121 @@
                     <div class="intro__para">
                         <p class="intro__para1">SHOP ONLINE </p>
                         <p class="intro__para2">HOME & MORE</p>
+                    </div>
+
                 </div>
-            </div>
+                <div class="popup__container">
+                    <button class="explore__btn" type="submit" onclick="openPopup()" id="register">Explore Now</button>
+                    <div class="popup" id="popup">
+                        <form id="form" action="/" class="popup__form" style="width:500px;">
+                            <div class="close">
+                                <h1>Registration</h1>
+                                <i class=" close__popup fa-solid fa-xmark" onclick="closePopup()"></i>
+                            </div>
+                            <div class="input-control">
+                                <label for="username">Username</label>
+                                <input id="username" name="username" type="text">
+                                <div class="error"></div>
+                            </div>
+                            <div class="input-control">
+                                <label for="email">Email</label>
+                                <input id="email" name="email" type="text">
+                                <div class="error"></div>
+                            </div>
+                            <div class="input-control">
+                                <label for="password">Password</label>
+                                <input id="password" name="password" type="password">
+                                <div class="error"></div>
+                            </div>
+                            <div class="input-control">
+                                <label for="password2">Password again</label>
+                                <input id="password2" name="password2" type="password">
+                                <div class="error"></div>
+                            </div>
+                            <button type="submit">Sign Up</button>
+                        </form>
+                    </div>
+                </div>
             </div>
         </header>
     </section>
+    <section id="shop">
+        <h3 class="shop__title">SHOP</h3>
+        <div class="row">
+            <div class="list"></div>
+        </div>
+    </section>
+    <section id="AboutUs">
+        <div class="row">
+            <div class="container__info">
+                <h1 class="title__info">ABOUT US</h1>
+            </div>
+            <div class="container__info--wrapper">
+                <img src="./assets household/download.jpeg" alt="" class="about__img">
+                <p class="para__info"><span class="change__color"> Your home is your comfort place make sure to have the best products in your home. </span>Our commitment is simple - to infuse your home with beauty and functionality through the highest quality of household
+                    products. HOMECOMFORTES curates an extensive collection of furnishings and home goods that constantly evolves to fit our customer's needs. Our aim to keep you as organized as you can be!
+                </p>
+            </div>
+        </div>
+    </section>
+    <section id="login">
+        <div class="account-page">
+            <div class="container">
+                <img src="./assets household/register img.jpeg" alt="" class="login__img">
+                <form id="form" action="/">
+                    <h1>Login</h1>
+
+                    <div class="input-control email__wrapper">
+                        <label for="email">Email</label>
+                        <input id="email" name="email" type="text">
+                        <div class="error"></div>
+                    </div>
+                    <div class="input-control">
+                        <label for="password">Password</label>
+                        <input id="password" name="password" type="password">
+                        <div class="error"></div>
+                    </div>
+                    <button type="submit">Sign Up</button>
+                    <p class="login__para">doesn't have an account?
+                        <a href="#home" class="register__link" onclick="openPopup()">Register now!!</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+
+        <div class="col-1">
+            <h3>Links</h3>
+            <a href="#">Home</a>
+            <a href="#shop">Shop</a>
+            <a href="#AboutUs">About-Us</a>
+            <a href="#login">Login</a>
+        </div>
+        <div class="col-2">
+            <h3>Give us your Feedback!</h3>
+            <form>
+                <input type="text" placeholder="hope you enjoyed">
+                <br>
+                <button type="submit">Submit your Feedback!!</button>
+            </form>
+            <div class="footer__line"></div>
+            <p class="footer__para">Copyright © 2023 HOMECOMFORTES, Designed by Abass.</p>
+        </div>
+        <div class="col-3">
+            <h3>CONTACT US</h3>
+            <p>123,XYZ,BSK 3 <br>Lebanon, Beirut, IN</p>
+            <div class="social__icons">
+                <a href=""><i class="fa-brands fa-instagram"></i></a>
+                <a href=""><i class="fa-brands fa-whatsapp" href="whatsapp://send?text= &phone=:961+70587546"></i></a>
+                <a href=""><i class="fa-brands fa-facebook"></i></a>
+            </div>
+        </div>
+
+
+    </footer>
+
 </body>
 
 </html>
